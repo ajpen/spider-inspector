@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scrapy Inspector</title>
+    <script src="prettify.js"></script>
+    <script src="list.min.js"></script>
+    <script src="socket.io.js"></script>
+    <link href="bulma.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href="prettify.css"/>
+</head>
+<body onload="PR.prettyPrint()">
+  <nav class="navbar has-shadow">
+    <div class="container">
+      <div class="navbar-brand">
+        <h1 class="navbar-item">
+          Scrapy Inspector
+        </h1>
+      </div>
+    </div>
+  </nav>
+<div id="app">
+  <div class="columns" id="mail-app">
+    <div class="column is-4 messages hero is-fullheight is-primary" id="message-feed">
+      <ul id="request_list">
+      </ul>
+    </div>
+    <div class="column message hero is-fullheight is-warning" id="message-pane">
+      <pre class="prettyprint">
+        [
+          {
+            "time": 1512493094060,
+            "level": 20,
+            "message": "Log opened."
+          },
+          {
+            "time": 1512493094060,
+            "level": 20,
+            "message": "[scrapy.log] Scrapy 1.0.6 started"
+          },
+          {
+            "time": 1512493094212,
+            "level": 20,
+            "message": "[stderr] /tmp/unpacked-eggs/__main__.egg/enclarity/commands/crawl.py:24: ScrapyDeprecationWarning: `Settings.overrides` attribute is deprecated and won't be supported in Scrapy 0.26, use `Settings.set(name, value, priority='cmdline')` instead"
+          },
+          {
+            "time": 1512493094212,
+            "level": 20,
+            "message": "[stderr]   self.settings.overrides.setdefault(k, v)"
+          },
+          {
+            "time": 1512493094219,
+            "level": 20,
+            "message": "[stderr] /tmp/unpacked-eggs/slybot.egg/slybot/spider.py:9: ScrapyDeprecationWarning: Module `scrapy.spider` is deprecated, use `scrapy.spiders` instead"
+          },
+          {
+            "time": 1512493094220,
+            "level": 20,
+            "message": "[stderr]   from scrapy.spider import Spider"
+          }
+        ]
+      </pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>
