@@ -1,8 +1,0 @@
-1. Ability to pause and resume the crawler from the inspector
-2. Look at the ability of rendering html for requests.
-3. Setting that only displays inspector log information. Does so by wiping the handlers off the rootlogger and setting
-   only the logger for the extension.
-
-Ideas:
-1. Possibility of starting a pdb session from the inspector. 
-2. Possibility of attaching a telnet console to the inspector?

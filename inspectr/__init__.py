@@ -18,14 +18,14 @@ from scrapy import signals
 STATIC_FILES = pkg_resources.resource_filename(__name__, 'client/')
 
 
-class InspectorServer(autobahn.WebSocketServerFactory):
+class Inspectr(autobahn.WebSocketServerFactory):
 
     def __init__(self, crawler, *args, **kwargs):
-        if not crawler.settings.getbool('INSPECTOR_ENABLED'):
+        if not crawler.settings.getbool('INSPECTR_ENABLED'):
             raise NotConfigured
-        super(InspectorServer, self).__init__()
-        self.host = crawler.settings.get('INSPECTOR_HOST', '127.0.0.1')
-        ports = crawler.settings.get('INSPECTOR_PORT', None)
+        super(Inspectr, self).__init__()
+        self.host = crawler.settings.get('INSPECTR_HOST', '127.0.0.1')
+        ports = crawler.settings.get('INSPECTR_PORT', None)
         if ports:
             self.portrange = [int(x) for x in ports if len(x) > 2]
         else:
@@ -49,10 +49,10 @@ class InspectorServer(autobahn.WebSocketServerFactory):
         site = Site(root)
         self.port = listen_tcp(self.portrange, self.host, site)
         h = self.port.getHost()
-        self.logger.debug("Inspector available on %(host)s:%(port)d",
+        self.logger.debug("Inspectr available on %(host)s:%(port)d",
                      {'host': h.host, 'port': h.port},
                      extra={'crawler': self.crawler})
-        if self.crawler.settings.get('INSPECTOR_BROWSER', None):
+        if self.crawler.settings.get('INSPECTR_AUTOSTART', None):
             webbrowser.open('http://{}:{}'.format(h.host, h.port))
 
     def stop_listening(self):

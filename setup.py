@@ -8,7 +8,7 @@ import os
 from setuptools import find_packages, setup
 
 # Package meta-data.
-NAME = 'scrapy_inspector'
+NAME = 'inspectr'
 DESCRIPTION = 'Real time scrapy request inspection'
 # URL = 'https://github.com/me/myproject'
 # EMAIL = 'me@example.com'
@@ -23,7 +23,7 @@ REQUIRED = [
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-with io.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
+with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
 
@@ -36,7 +36,7 @@ setup(
     # author_email=EMAIL,
     # url=URL,
     packages=find_packages(exclude=('tests',)),
-    package_data={'scrapy_inspector': ['client/*']},
+    package_data={'inspectr': ['client/*']},
     install_requires=REQUIRED,
     include_package_data=True,
     license='MIT',
