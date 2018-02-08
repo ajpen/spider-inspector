@@ -20,12 +20,12 @@ Usage
 
     `"inspectr.Inspectr": 500`
 
-Be sure to adjust the middleware order if you need to. It is recommended that Inspectr is the last middleware executed.
-
 
 2. Add the following setting:
 
   `INSPECTR_ENABLED=True`
+
+Be sure to adjust the middleware order if you need to. It is recommended that Inspectr is the last middleware executed.
 
 Optionally, you can set Inspectr to automatically its client:
 
