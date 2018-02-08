@@ -23,7 +23,7 @@ Usage
 
 2. Add the following setting:
 
-  `INSPECTR_ENABLED=True`
+    `INSPECTR_ENABLED=True`
 
 Be sure to adjust the middleware order if you need to. It is recommended that Inspectr is the last middleware executed.
 
