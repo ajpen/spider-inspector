@@ -36,6 +36,7 @@ setup(
     # author_email=EMAIL,
     # url=URL,
     packages=find_packages(exclude=('tests',)),
+    package_data={'scrapy_inspector': ['client/*']},
     install_requires=REQUIRED,
     include_package_data=True,
     license='MIT',
